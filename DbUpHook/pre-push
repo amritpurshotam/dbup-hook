@@ -1,0 +1,8 @@
+﻿#!/bin/bash
+./githooks/DbUpHook
+duplicate=$?
+if [ $duplicate -gt 0 ]
+then
+	echo "Duplicate DbUp script numbered $duplicate found. Please increment the newer script and try again."
+	exit 1
+fi
